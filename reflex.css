@@ -1,37 +1,39 @@
-#blocks{
+body {
+    background-color: oldlace;
+    height: fit-content;
+    border: solid;
+    border-color: oldlace;
+}
+#blocks {
+    background-color: whitesmoke;
     top: 50%;
-    background-color:whitesmoke;
-    column-count:4;
+
+    column-count: 4;
     display: block;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
 
-    padding: 15%;
-
-    border: solid;
-    border-color: oldlace;
-
+    padding-left: 15%;
+    padding-right: 15%;
 }
-.block{
-    height: 4cm;
-    width: 4cm;
-    
+.block {
+    height: 12vw;
+    width: 12vw;
+
     background-color: white;
-    border:black;
+    border: black;
     border-style: solid;
 
-    margin: 0;
-    
-
-    top: 50%;
-    padding: 10%;
-    column-count: 1;
-
+    position: relative;
+    text-align: center;
 }
 
-.blockLetter{
-    object-fit: fill;
-    color: blueviolet;
+.blockLetter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 400%;
+    color: black;
 }

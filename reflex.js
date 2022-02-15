@@ -34,29 +34,27 @@ function gameTurn(keyEvent){
     x = keyEvent.code;
     console.log(x);
     if(gameStarted == true){
-        if(x =='KeyG' && current_block_num == 0){
+        if(x =='KeyJ' && current_block_num == 0){
             window.clearInterval(time);
             points =points +1;
             document.getElementById('points').textContent ="Points: " + points;
             block_change();
-        }else if(x =='KeyH' && current_block_num == 1){
+        }else if(x =='KeyK' && current_block_num == 1){
             window.clearInterval(time);
             points =points +1;
             document.getElementById('points').textContent ="Points: " + points;
             block_change();
-        }else if(x =='KeyJ'&& current_block_num == 2){
+        }else if(x =='KeyL'&& current_block_num == 2){
             window.clearInterval(time);
             points =points +1;
             document.getElementById('points').textContent ="Points: " + points;
             block_change();
-        }else if(x =='KeyK'&& current_block_num == 3){
+        }else if(x =='Semicolon'&& current_block_num == 3){
             
             window.clearInterval(time);
             points =points +1;
             document.getElementById('points').textContent ="Points: " + points;
             block_change();
-        }else if(x =='Space'){
-            gameFinish()
         }
         else{
             turnFail()
@@ -72,11 +70,15 @@ function turnFail(){
 }
 
 function gameStart() {
-    document.getElementById('points').textContent ="Points: " + points;
+    // let startButton = document.getElementById('startStopButton');
+    // startButton.setAttribute("onClick", "javascript: gameFinish();");
+    // startButton.textContent = "Stop";
+    
+    document.getElementById('points').textContent = "Points: " + points;
     console.log("start");
     gameStarted = true;
     block_change();
-    document.addEventListener('keypress',gameTurn);
+    // document.addEventListener('keypress',gameTurn);
     
 }
 
@@ -85,8 +87,15 @@ function gameFinish() {
     window.clearInterval(time); 
     console.log("end");
     gameStarted = false;
-    document.removeEventListener('keypress',gameTurn);
+    // document.removeEventListener('keypress',gameTurn);
     document.getElementById("points").textContent = "Final Score: " + points ;
     points = 0;
+
+    document.getElementById("block" + current_block_num).style.backgroundColor = 'white';
+    document.getElementById("block" + current_block_num + "Letter").style.color = 'black';
+    
+    // let startButton = document.getElementById('startStopButton');
+    // startButton.setAttribute("onClick", "javascript: gameStart();");
+    // startButton.textContent = "Start";
     
 }

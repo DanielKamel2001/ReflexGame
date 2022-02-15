@@ -2,28 +2,37 @@
 <header>
     <title>reflex</title>
     <link rel="stylesheet" href="reflex.css">
-    <script type="text/javascript" src ="reflex.js">
-     
-        // myFunction()
-    </script>
+
+    <!-- Phaser Game Framework  -->
+    <!-- <script src="phaser.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script> -->
+    <script type="text/javascript" src ="reflex.js"></script>
+    <script src="inputHandling.js"></script>
 
 </header>
 <body>
-    <button onclick="gameStart()">Start</button>
-    <p id='points'></p>
+    <div id="top">
+        <p>Press Space to start. The goal of the game is to get the highest score by pressing down on the marked key. Gain 1 point for every correct keypress but if you press the wrong key or wait too long you will lose 5 points. Press Space again to stop the game. Remeber the goal is to get the highest score so if you start making mistakes it's better to stop before you ruin your score</p>
+        <!-- <button id="startStopButton" onclick="gameStart()">Start</button> -->
+    </div>
+    
     <div id ='blocks'>
         <div class="block" id="block0">
-            <p class = "blockLetter" id = 'block0Letter'>G</p>
+            <p class = "blockLetter" id = 'block0Letter'>J</p>
         </div>
         <div class="block" id="block1">
-            <p class = "blockLetter" id = 'block1Letter'>H</p>
+            <p class = "blockLetter" id = 'block1Letter'>K</p>
         </div>
         <div class="block" id="block2">
-            <p class = "blockLetter" id = 'block2Letter'>J</p>
+            <p class = "blockLetter" id = 'block2Letter'>L</p>
         </div>
         <div class="block" id="block3">
-            <p class = "blockLetter" id = 'block3Letter'>K</p>
+            <p class = "blockLetter" id = 'block3Letter'>;</p>
         </div>
-
+        
+    </div>
+    <div id="footer">
+        <h1 id='points'></h1>
+        <h2>Press 'Space' to Start and Stop</h2>
     </div>
 </body>
