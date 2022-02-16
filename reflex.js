@@ -1,6 +1,8 @@
 let current_block_num = null
 let  gameStarted = false
 let points = 0
+let timeLimit;
+
 
 let time; 
 
@@ -24,7 +26,10 @@ function block_change(){
         }
     }
     window.clearInterval(time);
-    time = window.setInterval(turnFail,2500);
+    // time limit to press button decreases by function of current score
+    timeLimit = 1000*(Math.pow(2.75, (-0.05) * points) + 0.5);
+    console.log("time limit" + timeLimit);
+    time = window.setInterval(turnFail,timeLimit);
 
 }
 
